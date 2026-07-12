@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.nat_gateways : {
       for k2, v2 in coalesce(v1.nat_gateway_public_ip_associations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        nat_gateway_id = module.nat_gateways.nat_gateways["${k1}"].id
+        nat_gateway_id = module.nat_gateways.nat_gateways_id["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.nat_gateways : {
       for k2, v2 in coalesce(v1.nat_gateway_public_ip_prefix_associations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        nat_gateway_id = module.nat_gateways.nat_gateways["${k1}"].id
+        nat_gateway_id = module.nat_gateways.nat_gateways_id["${k1}"]
       })
     }
   ]...)
