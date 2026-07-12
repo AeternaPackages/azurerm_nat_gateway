@@ -1,4 +1,9 @@
 # --- azurerm_nat_gateway ---
+output "nat_gateways_id" {
+  description = "Map of id values across all nat_gateways, keyed the same as var.nat_gateways"
+  value       = module.nat_gateways.nat_gateways_id
+}
+
 output "nat_gateways_idle_timeout_in_minutes" {
   description = "Map of idle_timeout_in_minutes values across all nat_gateways, keyed the same as var.nat_gateways"
   value       = module.nat_gateways.nat_gateways_idle_timeout_in_minutes
@@ -40,6 +45,11 @@ output "nat_gateways_zones" {
 }
 
 # --- azurerm_nat_gateway_public_ip_association ---
+output "nat_gateway_public_ip_associations_id" {
+  description = "Map of id values across all nat_gateway_public_ip_associations, keyed the same as var.nat_gateway_public_ip_associations"
+  value       = module.nat_gateway_public_ip_associations.nat_gateway_public_ip_associations_id
+}
+
 output "nat_gateway_public_ip_associations_nat_gateway_id" {
   description = "Map of nat_gateway_id values across all nat_gateway_public_ip_associations, keyed the same as var.nat_gateway_public_ip_associations"
   value       = module.nat_gateway_public_ip_associations.nat_gateway_public_ip_associations_nat_gateway_id
@@ -51,6 +61,11 @@ output "nat_gateway_public_ip_associations_public_ip_address_id" {
 }
 
 # --- azurerm_nat_gateway_public_ip_prefix_association ---
+output "nat_gateway_public_ip_prefix_associations_id" {
+  description = "Map of id values across all nat_gateway_public_ip_prefix_associations, keyed the same as var.nat_gateway_public_ip_prefix_associations"
+  value       = module.nat_gateway_public_ip_prefix_associations.nat_gateway_public_ip_prefix_associations_id
+}
+
 output "nat_gateway_public_ip_prefix_associations_nat_gateway_id" {
   description = "Map of nat_gateway_id values across all nat_gateway_public_ip_prefix_associations, keyed the same as var.nat_gateway_public_ip_prefix_associations"
   value       = module.nat_gateway_public_ip_prefix_associations.nat_gateway_public_ip_prefix_associations_nat_gateway_id
