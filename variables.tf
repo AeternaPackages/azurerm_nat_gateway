@@ -22,8 +22,8 @@ EOT
     location                = string
     name                    = string
     resource_group_name     = string
-    idle_timeout_in_minutes = optional(number) # Default: 4
-    sku_name                = optional(string) # Default: "Standard"
+    idle_timeout_in_minutes = optional(number)
+    sku_name                = optional(string)
     tags                    = optional(map(string))
     zones                   = optional(set(string))
     nat_gateway_public_ip_associations = optional(map(object({
