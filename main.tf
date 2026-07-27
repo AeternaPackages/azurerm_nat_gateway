@@ -21,18 +21,18 @@ locals {
 }
 
 module "nat_gateways" {
-  source       = "git::https://github.com/AeternaModules/azurerm_nat_gateway.git?ref=v4.80.0"
+  source       = "git::https://github.com/AeternaModules/azurerm_nat_gateway.git?ref=v4.81.0"
   nat_gateways = local.nat_gateways
 }
 
 module "nat_gateway_public_ip_associations" {
-  source                             = "git::https://github.com/AeternaModules/azurerm_nat_gateway_public_ip_association.git?ref=v4.80.0"
+  source                             = "git::https://github.com/AeternaModules/azurerm_nat_gateway_public_ip_association.git?ref=v4.81.0"
   nat_gateway_public_ip_associations = local.nat_gateway_public_ip_associations
   depends_on                         = [module.nat_gateways]
 }
 
 module "nat_gateway_public_ip_prefix_associations" {
-  source                                    = "git::https://github.com/AeternaModules/azurerm_nat_gateway_public_ip_prefix_association.git?ref=v4.80.0"
+  source                                    = "git::https://github.com/AeternaModules/azurerm_nat_gateway_public_ip_prefix_association.git?ref=v4.81.0"
   nat_gateway_public_ip_prefix_associations = local.nat_gateway_public_ip_prefix_associations
   depends_on                                = [module.nat_gateways]
 }
